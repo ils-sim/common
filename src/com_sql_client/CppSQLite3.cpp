@@ -152,7 +152,6 @@ void CppSQLite3Buffer::clear()
 
 }
 
-//cppcheck-suppress unusedFunction
 const char* CppSQLite3Buffer::format(const char* szFormat, ...)
 {
 	clear();
@@ -181,14 +180,12 @@ CppSQLite3Binary::~CppSQLite3Binary()
 	clear();
 }
 
-//cppcheck-suppress unusedFunction
 void CppSQLite3Binary::setBinary(const unsigned char* pBuf, int nLen)
 {
 	mpBuf = allocBuffer(nLen);
 	memcpy(mpBuf, pBuf, nLen);
 }
 
-//cppcheck-suppress unusedFunction
 void CppSQLite3Binary::setEncoded(const unsigned char* pBuf)
 {
 	clear();
@@ -209,7 +206,6 @@ void CppSQLite3Binary::setEncoded(const unsigned char* pBuf)
 	mbEncoded = true;
 }
 
-//cppcheck-suppress unusedFunction
 const unsigned char* CppSQLite3Binary::getEncoded()
 {
 	if (!mbEncoded)
@@ -245,7 +241,6 @@ const unsigned char* CppSQLite3Binary::getBinary()
 	return mpBuf;
 }
 
-//cppcheck-suppress unusedFunction
 int CppSQLite3Binary::getBinaryLength()
 {
 	getBinary();
@@ -525,7 +520,6 @@ int CppSQLite3Query::fieldIndex(const char* szField)
 							DONT_DELETE_MSG);
 }
 
-//cppcheck-suppress unusedFunction
 const char* CppSQLite3Query::fieldName(int nCol)
 {
 	checkVM();
@@ -540,7 +534,6 @@ const char* CppSQLite3Query::fieldName(int nCol)
 	return sqlite3_column_name(mpVM, nCol);
 }
 
-//cppcheck-suppress unusedFunction
 const char* CppSQLite3Query::fieldDeclType(int nCol)
 {
 	checkVM();
@@ -708,7 +701,6 @@ int CppSQLite3Table::numFields() const
 	return mnCols;
 }
 
-//cppcheck-suppress unusedFunction
 int CppSQLite3Table::numRows() const
 {
 	checkResults();
@@ -860,7 +852,6 @@ const char* CppSQLite3Table::fieldName(int nCol) const
 	return mpaszResults[nCol];
 }
 
-//cppcheck-suppress unusedFunction
 void CppSQLite3Table::setRow(int nRow)
 {
 	checkResults();
@@ -1237,7 +1228,6 @@ void CppSQLite3DB::close()
 	}
 }
 
-//cppcheck-suppress unusedFunction
 CppSQLite3Statement CppSQLite3DB::compileStatement(const char* szSQL)
 {
 	checkDB();
@@ -1246,7 +1236,6 @@ CppSQLite3Statement CppSQLite3DB::compileStatement(const char* szSQL)
 	return CppSQLite3Statement(mpDB, pVM);
 }
 
-//cppcheck-suppress unusedFunction
 bool CppSQLite3DB::tableExists(const char* szTable)
 {
 	char szSQL[256];
@@ -1318,7 +1307,6 @@ int CppSQLite3DB::execScalar(const char* szSQL, int nNullValue/*=0*/)
 	return q.getIntField(0, nNullValue);
 }
 
-//cppcheck-suppress unusedFunction
 CppSQLite3Table CppSQLite3DB::getTable(const char* szSQL) const
 {
 	checkDB();
@@ -1341,7 +1329,6 @@ CppSQLite3Table CppSQLite3DB::getTable(const char* szSQL) const
 	}
 }
 
-//cppcheck-suppress unusedFunction
 sqlite_int64 CppSQLite3DB::lastRowId()
 {
 	return sqlite3_last_insert_rowid(mpDB);
@@ -1386,7 +1373,6 @@ sqlite3_stmt* CppSQLite3DB::compile(const char* szSQL)
 	return pVM;
 }
 
-//cppcheck-suppress unusedFunction
 bool CppSQLite3DB::IsAutoCommitOn()
 {
 	checkDB();

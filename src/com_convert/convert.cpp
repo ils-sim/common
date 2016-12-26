@@ -82,14 +82,12 @@ string Time_ttoMySQLTime(const boost::posix_time::ptime & time)
 	return stream.str();
 }
 
-//cppcheck-suppress unusedFunction
 wstring StringToWString(const string & s)
 {
     wstring wsTmp(s.begin(), s.end());
 	return wsTmp;
 }
 
-//cppcheck-suppress unusedFunction
 string WStringToString(const wstring & s)
 {
 	string wsTmp(s.begin(), s.end());
