@@ -11,4 +11,4 @@ SET(_LIBS ${_LIBS} "pthread")
 SET(_LIBS ${_LIBS} "boost_thread")
 SET(_LIBS ${_LIBS} "boost_date_time")
 
-TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} com ${_LIBS})
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} common ${_LIBS})

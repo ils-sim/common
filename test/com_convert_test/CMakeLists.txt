@@ -10,4 +10,4 @@ SET(_LIBS ${_LIBS} "boost_system")
 SET(_LIBS ${_LIBS} "pthread")
 SET(_LIBS ${_LIBS} "boost_thread")
 
-TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} com ${_LIBS} Threads::Threads)# ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} common ${_LIBS} Threads::Threads)# ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})

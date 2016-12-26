@@ -11,4 +11,4 @@ SET(_LIBS ${_LIBS} "boost_date_time")
 SET(_LIBS ${_LIBS} "mysqlcppconn")
 SET(_LIBS ${_LIBS} "sqlite3")
 
-TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} com ${_LIBS} Threads::Threads)
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME} common ${_LIBS} Threads::Threads)
